@@ -3688,6 +3688,102 @@
   setupCombinedQuiz(existingAllQuestions,'existingAll','network-security-existing-all-state-v1','既存問題');
   setupCombinedQuiz(originalAllQuestions,'originalAll','network-security-original-all-state-v1','オリジナル問題');
 
+
+  // ===== 四択の選択肢シャッフル =====
+  // 問題を初めて表示したときだけ選択肢をランダム化し、
+  // 同じページを「前へ / 次へ」で戻った場合は、そのセッション中の並びを維持する。
+  // ページを再読み込みすると、新しい並びになる。
+  (() => {
+    const choiceOrderCache = new Map();
+    const choiceContainers = [...document.querySelectorAll('[id$="Choices"]')];
+
+    function getQuestionKey(container){
+      const questionId = container.id.replace(/Choices$/, 'Question');
+      const questionText = document.getElementById(questionId)?.textContent?.trim() || '';
+      return `${container.id}::${questionText}`;
+    }
+
+    function getChoiceText(button){
+      const label = button.querySelector('.choice-index');
+      const full = button.textContent || '';
+      const labelText = label?.textContent || '';
+      return full.slice(labelText.length).trim();
+    }
+
+    function makeUniqueChoiceKeys(buttons){
+      const seen = new Map();
+      return buttons.map(btn => {
+        const text = getChoiceText(btn);
+        const n = seen.get(text) || 0;
+        seen.set(text, n + 1);
+        const key = `${text}@@${n}`;
+        btn.dataset.choiceShuffleKey = key;
+        return key;
+      });
+    }
+
+    function shuffleArray(array){
+      for(let i=array.length-1;i>0;i--){
+        const j=Math.floor(Math.random()*(i+1));
+        [array[i],array[j]]=[array[j],array[i]];
+      }
+      // 4択が偶然元の順番のままになるケースも避ける。
+      if(array.length > 1 && array.every((v,i)=>v===i)){
+        [array[0],array[1]]=[array[1],array[0]];
+      }
+      return array;
+    }
+
+    function applyChoiceShuffle(container){
+      const buttons=[...container.children].filter(el=>el.matches && el.matches('button.choice'));
+      if(buttons.length < 2) return;
+
+      const questionKey=getQuestionKey(container);
+      if(!questionKey.endsWith('::')){
+        // 新しく生成されたボタンに、選択肢本文から安定したキーを付ける。
+        const currentKeys=makeUniqueChoiceKeys(buttons);
+        let wanted=choiceOrderCache.get(questionKey);
+
+        if(!wanted || wanted.length !== buttons.length || wanted.some(k=>!currentKeys.includes(k))){
+          const shuffledIndexes=shuffleArray([...buttons.keys()]);
+          wanted=shuffledIndexes.map(i=>currentKeys[i]);
+          choiceOrderCache.set(questionKey,wanted);
+        }
+
+        const byKey=new Map(buttons.map(btn=>[btn.dataset.choiceShuffleKey,btn]));
+        const currentOrder=buttons.map(btn=>btn.dataset.choiceShuffleKey);
+        const needsReorder=wanted.some((key,i)=>currentOrder[i]!==key);
+
+        if(needsReorder){
+          wanted.forEach(key=>{
+            const btn=byKey.get(key);
+            if(btn) container.appendChild(btn);
+          });
+        }
+      }
+
+      // A/B/C/D は「表示上の位置」に合わせて付け直す。
+      [...container.children].filter(el=>el.matches && el.matches('button.choice')).forEach((btn,i)=>{
+        const badge=btn.querySelector('.choice-index');
+        if(badge) badge.textContent=String.fromCharCode(65+i);
+      });
+    }
+
+    choiceContainers.forEach(container=>{
+      applyChoiceShuffle(container);
+      let scheduled=false;
+      const observer=new MutationObserver(()=>{
+        if(scheduled) return;
+        scheduled=true;
+        requestAnimationFrame(()=>{
+          scheduled=false;
+          applyChoiceShuffle(container);
+        });
+      });
+      observer.observe(container,{childList:true,subtree:false});
+    });
+  })();
+
   // ===== ダークモード =====
   const themeKey='network-study-theme-v1';
   const themeToggle=document.getElementById('themeToggle');
