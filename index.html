@@ -302,7 +302,7 @@
   <div class="wrap">
     <span class="eyebrow">インターネット概論・関連法規</span>
     <h1>ネットワーク1〜5・セキュリティ1〜3<br>試験対策ノート</h1>
-    <p class="lead">小テストと授業教材をもとに、ネットワーク1〜5・セキュリティ1〜3の重要ポイントを整理。実際の小テスト問題をサイト上で解きながら、間違えた問題だけ解き直せます。全範囲を混ぜた「全問題」モードにも対応。</p>
+    <p class="lead">小テストと授業教材をもとに、ネットワーク1〜5・セキュリティ1〜3の重要ポイントを整理。実際の小テスト問題をサイト上で解きながら、間違えた問題だけ解き直せます。「全問題」では既存問題とオリジナル問題を分けて総合演習できます。</p>
     <div class="progress-box">
       <div class="progress-row"><span>ネットワーク1 暗記チェック進捗</span><span id="progressText">0 / 20</span></div>
       <div class="bar"><div id="progressBar"></div></div>
@@ -326,57 +326,89 @@
 </nav>
 
 <main>
-<div class="page-switch-note">上の「全問題 / Network 1〜5 / Security 1〜3」で範囲を切り替えられます。「全問題」では全範囲をまとめてシャッフルできます。</div>
+<div class="page-switch-note">上の「全問題 / Network 1〜5 / Security 1〜3」で範囲を切り替えられます。各範囲の下部にオリジナル10問を追加。「全問題」では既存問題とオリジナル問題を分けて、それぞれシャッフルできます。</div>
 
 <div class="network-page" data-page="all">
   <div class="chapter-banner" style="background:linear-gradient(135deg,#4338ca,#6d28d9 58%,#7c3aed)">
     <h2>全問題まとめ演習</h2>
-    <p>Network 1〜5 + Security 1〜3 の小テスト問題を全部まとめて演習。範囲をまたいでシャッフルできるので、本番前の総仕上げに。</p>
-    <div class="chapter-badges"><span class="chapter-badge">全範囲</span><span class="chapter-badge">全問シャッフル</span><span class="chapter-badge">間違いだけ再挑戦</span></div>
+    <p>Network 1〜5 + Security 1〜3 を横断して演習。<b>既存問題</b>と<b>オリジナル問題</b>を分けているので、目的に合わせて別々にシャッフルできます。</p>
+    <div class="chapter-badges"><span class="chapter-badge">既存問題を総復習</span><span class="chapter-badge">オリジナル問題で応用</span><span class="chapter-badge">それぞれ個別シャッフル</span></div>
   </div>
 
   <section id="all-summary">
-    <div class="section-title"><div class="num">∞</div><div><h2>総合モード</h2><small>8つの範囲をランダムに横断</small></div></div>
+    <div class="section-title"><div class="num">∞</div><div><h2>総合モード</h2><small>既存問題とオリジナル問題を分けて総仕上げ</small></div></div>
     <div class="card">
-      <h3>全範囲を混ぜて解く</h3>
-      <p>各ネットワーク・セキュリティの問題を1つの問題集として出題します。問題上部には出典範囲も表示されます。</p>
+      <h3>2つの総合問題集</h3>
+      <p>上は授業・小テスト由来の<b>既存問題だけ</b>、下は教材内容から作成した<b>オリジナル問題だけ</b>。それぞれ回答履歴も独立しています。</p>
       <div class="all-overview">
-        <div class="mini"><b id="allQuestionCount">-</b><span>全問題</span></div>
+        <div class="mini"><b id="existingAllQuestionCount">-</b><span>既存問題</span></div>
+        <div class="mini"><b id="originalAllQuestionCount">-</b><span>オリジナル問題</span></div>
         <div class="mini"><b>5</b><span>Network範囲</span></div>
         <div class="mini"><b>3</b><span>Security範囲</span></div>
-        <div class="mini"><b>1</b><span>総合問題集</span></div>
       </div>
-      <div class="memory">おすすめ：最初に「全問シャッフル」→ 一周後に「間違いだけ再挑戦」。</div>
+      <div class="memory">おすすめ：①既存問題をシャッフル → ②間違い直し → ③オリジナル問題をシャッフル、の順で総仕上げ。</div>
     </div>
   </section>
 
-  <section id="all-quiz">
-    <div class="section-title"><div class="num">Q</div><div><h2>全問題 演習</h2><small>Network 1〜5 + Security 1〜3</small></div></div>
+  <section id="all-existing-quiz">
+    <div class="section-title"><div class="num">Q</div><div><h2>既存問題・全範囲</h2><small>授業・小テスト由来の問題だけをまとめて演習</small></div></div>
     <div class="quiz-panel">
-      <div class="quiz-toolbar">
+      <div class="test-tip"><b>まずはこちら：</b>授業で実際に出された問題を Network 1〜5 + Security 1〜3 からランダムに解きます。</div>
+      <div class="quiz-toolbar" style="margin-top:14px">
         <div class="quiz-stats">
-          <span class="stat-pill" id="quizAllProgress">1 / -</span>
-          <span class="stat-pill good" id="quizAllCorrect">正解 0</span>
-          <span class="stat-pill bad" id="quizAllWrong">不正解 0</span>
+          <span class="stat-pill" id="existingAllProgress">1 / -</span>
+          <span class="stat-pill good" id="existingAllCorrect">正解 0</span>
+          <span class="stat-pill bad" id="existingAllWrong">不正解 0</span>
         </div>
         <div class="actions" style="margin-top:0">
-          <button class="btn" id="shuffleQuizAll" type="button">🔀 全問シャッフル</button>
-          <button class="btn secondary" id="retryWrongAll" type="button">間違いだけ再挑戦</button>
-          <button class="btn secondary" id="showAllQuizAll" type="button">全問モード</button>
-          <button class="btn secondary" id="resetQuizAll" type="button">履歴リセット</button>
+          <button class="btn" id="existingAllShuffle" type="button">🔀 既存問題をシャッフル</button>
+          <button class="btn secondary" id="existingAllRetryWrong" type="button">間違いだけ再挑戦</button>
+          <button class="btn secondary" id="existingAllShowAll" type="button">既存問題すべて</button>
+          <button class="btn secondary" id="existingAllReset" type="button">履歴リセット</button>
         </div>
       </div>
-      <div id="quizAllCard" class="quiz-card">
-        <div class="quiz-meta"><span id="quizAllNumber"></span><span class="source-pill" id="quizAllSource"></span><span>1つ選択</span></div>
-        <div class="quiz-question" id="quizAllQuestion"></div>
-        <div class="choices" id="quizAllChoices"></div>
-        <div class="feedback hidden" id="quizAllFeedback"></div>
+      <div id="existingAllCard" class="quiz-card">
+        <div class="quiz-meta"><span id="existingAllNumber"></span><span class="source-pill" id="existingAllSource"></span><span>既存問題</span><span>1つ選択</span></div>
+        <div class="quiz-question" id="existingAllQuestion"></div>
+        <div class="choices" id="existingAllChoices"></div>
+        <div class="feedback hidden" id="existingAllFeedback"></div>
         <div class="quiz-nav">
-          <button class="btn secondary" id="prevQuizAll" type="button">← 前の問題</button>
-          <button class="btn secondary" id="nextQuizAll" type="button">次の問題 →</button>
+          <button class="btn secondary" id="existingAllPrev" type="button">← 前の問題</button>
+          <button class="btn secondary" id="existingAllNext" type="button">次の問題 →</button>
         </div>
       </div>
-      <div id="quizAllEmpty" class="quiz-empty hidden"><strong>解き直す問題はありません 🎉</strong><span>いまの総合回答履歴では、間違えた問題がありません。</span></div>
+      <div id="existingAllEmpty" class="quiz-empty hidden"><strong>解き直す問題はありません 🎉</strong><span>既存問題の回答履歴では、間違えた問題がありません。</span></div>
+    </div>
+  </section>
+
+  <section id="all-original-quiz">
+    <div class="section-title"><div class="num">OQ</div><div><h2>オリジナル問題・全範囲</h2><small>教材内容を別の聞かれ方・応用形式にした80問</small></div></div>
+    <div class="quiz-panel">
+      <div class="test-tip"><b>応用対策：</b>既存問題と答えの丸暗記にならないよう、Network 1〜5 + Security 1〜3 のオリジナル問題だけをまとめて出題します。</div>
+      <div class="quiz-toolbar" style="margin-top:14px">
+        <div class="quiz-stats">
+          <span class="stat-pill" id="originalAllProgress">1 / -</span>
+          <span class="stat-pill good" id="originalAllCorrect">正解 0</span>
+          <span class="stat-pill bad" id="originalAllWrong">不正解 0</span>
+        </div>
+        <div class="actions" style="margin-top:0">
+          <button class="btn" id="originalAllShuffle" type="button">🔀 オリジナルをシャッフル</button>
+          <button class="btn secondary" id="originalAllRetryWrong" type="button">間違いだけ再挑戦</button>
+          <button class="btn secondary" id="originalAllShowAll" type="button">オリジナル全問</button>
+          <button class="btn secondary" id="originalAllReset" type="button">履歴リセット</button>
+        </div>
+      </div>
+      <div id="originalAllCard" class="quiz-card">
+        <div class="quiz-meta"><span id="originalAllNumber"></span><span class="source-pill" id="originalAllSource"></span><span>オリジナル</span><span>1つ選択</span></div>
+        <div class="quiz-question" id="originalAllQuestion"></div>
+        <div class="choices" id="originalAllChoices"></div>
+        <div class="feedback hidden" id="originalAllFeedback"></div>
+        <div class="quiz-nav">
+          <button class="btn secondary" id="originalAllPrev" type="button">← 前の問題</button>
+          <button class="btn secondary" id="originalAllNext" type="button">次の問題 →</button>
+        </div>
+      </div>
+      <div id="originalAllEmpty" class="quiz-empty hidden"><strong>解き直す問題はありません 🎉</strong><span>オリジナル問題の回答履歴では、間違えた問題がありません。</span></div>
     </div>
   </section>
 </div>
@@ -740,6 +772,34 @@
   </div>
 </section>
 
+<section id="n1-original-quiz" class="original-quiz-section">
+  <div class="section-title"><div class="num">OQ</div><div><h2>ネットワーク1 オリジナル問題</h2><small>教材の重要ポイントを言い換え・応用した新作10問</small></div></div>
+  <div class="quiz-panel">
+    <div class="test-tip"><b>本番対策：</b>既存の小テストと同じ答えを暗記するだけでなく、別の聞かれ方でも判断できるか確認しよう。</div>
+    <div class="quiz-toolbar" style="margin-top:14px">
+      <div class="quiz-stats">
+        <span class="stat-pill" id="origN1Progress">1 / 10</span>
+        <span class="stat-pill good" id="origN1Correct">正解 0</span>
+        <span class="stat-pill bad" id="origN1Wrong">不正解 0</span>
+      </div>
+      <div class="actions" style="margin-top:0">
+        <button class="btn secondary" id="origN1Shuffle" type="button">オリジナル問題をシャッフル</button>
+        <button class="btn secondary" id="origN1RetryWrong" type="button">間違えた問題だけ解き直す</button>
+        <button class="btn secondary" id="origN1ShowAll" type="button">全10問に戻す</button>
+        <button class="btn secondary" id="origN1Reset" type="button">回答履歴をリセット</button>
+      </div>
+    </div>
+    <div id="origN1Card" class="quiz-card">
+      <div class="quiz-meta"><span id="origN1Number"></span><span>オリジナル</span><span>1つ選択</span></div>
+      <div class="quiz-question" id="origN1Question"></div>
+      <div class="choices" id="origN1Choices"></div>
+      <div class="feedback hidden" id="origN1Feedback"></div>
+      <div class="quiz-nav"><button class="btn secondary" id="origN1Prev" type="button">← 前の問題</button><button class="btn" id="origN1Next" type="button">次の問題 →</button></div>
+    </div>
+    <div id="origN1Empty" class="quiz-empty hidden"><strong>解き直す問題はありません 🎉</strong><span>オリジナル問題の回答履歴では、間違えた問題がありません。</span></div>
+  </div>
+</section>
+
 
 </div>
 <div class="network-page" data-page="n2">
@@ -1069,6 +1129,34 @@
   </div>
 </section>
 
+<section id="n2-original-quiz" class="original-quiz-section">
+  <div class="section-title"><div class="num">OQ</div><div><h2>ネットワーク2 オリジナル問題</h2><small>教材の重要ポイントを言い換え・応用した新作10問</small></div></div>
+  <div class="quiz-panel">
+    <div class="test-tip"><b>本番対策：</b>既存の小テストと同じ答えを暗記するだけでなく、別の聞かれ方でも判断できるか確認しよう。</div>
+    <div class="quiz-toolbar" style="margin-top:14px">
+      <div class="quiz-stats">
+        <span class="stat-pill" id="origN2Progress">1 / 10</span>
+        <span class="stat-pill good" id="origN2Correct">正解 0</span>
+        <span class="stat-pill bad" id="origN2Wrong">不正解 0</span>
+      </div>
+      <div class="actions" style="margin-top:0">
+        <button class="btn secondary" id="origN2Shuffle" type="button">オリジナル問題をシャッフル</button>
+        <button class="btn secondary" id="origN2RetryWrong" type="button">間違えた問題だけ解き直す</button>
+        <button class="btn secondary" id="origN2ShowAll" type="button">全10問に戻す</button>
+        <button class="btn secondary" id="origN2Reset" type="button">回答履歴をリセット</button>
+      </div>
+    </div>
+    <div id="origN2Card" class="quiz-card">
+      <div class="quiz-meta"><span id="origN2Number"></span><span>オリジナル</span><span>1つ選択</span></div>
+      <div class="quiz-question" id="origN2Question"></div>
+      <div class="choices" id="origN2Choices"></div>
+      <div class="feedback hidden" id="origN2Feedback"></div>
+      <div class="quiz-nav"><button class="btn secondary" id="origN2Prev" type="button">← 前の問題</button><button class="btn" id="origN2Next" type="button">次の問題 →</button></div>
+    </div>
+    <div id="origN2Empty" class="quiz-empty hidden"><strong>解き直す問題はありません 🎉</strong><span>オリジナル問題の回答履歴では、間違えた問題がありません。</span></div>
+  </div>
+</section>
+
 
 </div>
 <div class="network-page" data-page="n3">
@@ -1345,6 +1433,34 @@
   </div>
 </section>
 
+<section id="n3-original-quiz" class="original-quiz-section">
+  <div class="section-title"><div class="num">OQ</div><div><h2>ネットワーク3 オリジナル問題</h2><small>教材の重要ポイントを言い換え・応用した新作10問</small></div></div>
+  <div class="quiz-panel">
+    <div class="test-tip"><b>本番対策：</b>既存の小テストと同じ答えを暗記するだけでなく、別の聞かれ方でも判断できるか確認しよう。</div>
+    <div class="quiz-toolbar" style="margin-top:14px">
+      <div class="quiz-stats">
+        <span class="stat-pill" id="origN3Progress">1 / 10</span>
+        <span class="stat-pill good" id="origN3Correct">正解 0</span>
+        <span class="stat-pill bad" id="origN3Wrong">不正解 0</span>
+      </div>
+      <div class="actions" style="margin-top:0">
+        <button class="btn secondary" id="origN3Shuffle" type="button">オリジナル問題をシャッフル</button>
+        <button class="btn secondary" id="origN3RetryWrong" type="button">間違えた問題だけ解き直す</button>
+        <button class="btn secondary" id="origN3ShowAll" type="button">全10問に戻す</button>
+        <button class="btn secondary" id="origN3Reset" type="button">回答履歴をリセット</button>
+      </div>
+    </div>
+    <div id="origN3Card" class="quiz-card">
+      <div class="quiz-meta"><span id="origN3Number"></span><span>オリジナル</span><span>1つ選択</span></div>
+      <div class="quiz-question" id="origN3Question"></div>
+      <div class="choices" id="origN3Choices"></div>
+      <div class="feedback hidden" id="origN3Feedback"></div>
+      <div class="quiz-nav"><button class="btn secondary" id="origN3Prev" type="button">← 前の問題</button><button class="btn" id="origN3Next" type="button">次の問題 →</button></div>
+    </div>
+    <div id="origN3Empty" class="quiz-empty hidden"><strong>解き直す問題はありません 🎉</strong><span>オリジナル問題の回答履歴では、間違えた問題がありません。</span></div>
+  </div>
+</section>
+
 
 </div>
 <div class="network-page" data-page="n4">
@@ -1604,6 +1720,34 @@
       <strong>解き直す問題はありません 🎉</strong>
       <span>いまの回答履歴では、間違えた問題がありません。</span>
     </div>
+  </div>
+</section>
+
+<section id="n4-original-quiz" class="original-quiz-section">
+  <div class="section-title"><div class="num">OQ</div><div><h2>ネットワーク4 オリジナル問題</h2><small>教材の重要ポイントを言い換え・応用した新作10問</small></div></div>
+  <div class="quiz-panel">
+    <div class="test-tip"><b>本番対策：</b>既存の小テストと同じ答えを暗記するだけでなく、別の聞かれ方でも判断できるか確認しよう。</div>
+    <div class="quiz-toolbar" style="margin-top:14px">
+      <div class="quiz-stats">
+        <span class="stat-pill" id="origN4Progress">1 / 10</span>
+        <span class="stat-pill good" id="origN4Correct">正解 0</span>
+        <span class="stat-pill bad" id="origN4Wrong">不正解 0</span>
+      </div>
+      <div class="actions" style="margin-top:0">
+        <button class="btn secondary" id="origN4Shuffle" type="button">オリジナル問題をシャッフル</button>
+        <button class="btn secondary" id="origN4RetryWrong" type="button">間違えた問題だけ解き直す</button>
+        <button class="btn secondary" id="origN4ShowAll" type="button">全10問に戻す</button>
+        <button class="btn secondary" id="origN4Reset" type="button">回答履歴をリセット</button>
+      </div>
+    </div>
+    <div id="origN4Card" class="quiz-card">
+      <div class="quiz-meta"><span id="origN4Number"></span><span>オリジナル</span><span>1つ選択</span></div>
+      <div class="quiz-question" id="origN4Question"></div>
+      <div class="choices" id="origN4Choices"></div>
+      <div class="feedback hidden" id="origN4Feedback"></div>
+      <div class="quiz-nav"><button class="btn secondary" id="origN4Prev" type="button">← 前の問題</button><button class="btn" id="origN4Next" type="button">次の問題 →</button></div>
+    </div>
+    <div id="origN4Empty" class="quiz-empty hidden"><strong>解き直す問題はありません 🎉</strong><span>オリジナル問題の回答履歴では、間違えた問題がありません。</span></div>
   </div>
 </section>
 
@@ -1884,6 +2028,34 @@
   </div>
 </section>
 
+<section id="n5-original-quiz" class="original-quiz-section">
+  <div class="section-title"><div class="num">OQ</div><div><h2>ネットワーク5 オリジナル問題</h2><small>教材の重要ポイントを言い換え・応用した新作10問</small></div></div>
+  <div class="quiz-panel">
+    <div class="test-tip"><b>本番対策：</b>既存の小テストと同じ答えを暗記するだけでなく、別の聞かれ方でも判断できるか確認しよう。</div>
+    <div class="quiz-toolbar" style="margin-top:14px">
+      <div class="quiz-stats">
+        <span class="stat-pill" id="origN5Progress">1 / 10</span>
+        <span class="stat-pill good" id="origN5Correct">正解 0</span>
+        <span class="stat-pill bad" id="origN5Wrong">不正解 0</span>
+      </div>
+      <div class="actions" style="margin-top:0">
+        <button class="btn secondary" id="origN5Shuffle" type="button">オリジナル問題をシャッフル</button>
+        <button class="btn secondary" id="origN5RetryWrong" type="button">間違えた問題だけ解き直す</button>
+        <button class="btn secondary" id="origN5ShowAll" type="button">全10問に戻す</button>
+        <button class="btn secondary" id="origN5Reset" type="button">回答履歴をリセット</button>
+      </div>
+    </div>
+    <div id="origN5Card" class="quiz-card">
+      <div class="quiz-meta"><span id="origN5Number"></span><span>オリジナル</span><span>1つ選択</span></div>
+      <div class="quiz-question" id="origN5Question"></div>
+      <div class="choices" id="origN5Choices"></div>
+      <div class="feedback hidden" id="origN5Feedback"></div>
+      <div class="quiz-nav"><button class="btn secondary" id="origN5Prev" type="button">← 前の問題</button><button class="btn" id="origN5Next" type="button">次の問題 →</button></div>
+    </div>
+    <div id="origN5Empty" class="quiz-empty hidden"><strong>解き直す問題はありません 🎉</strong><span>オリジナル問題の回答履歴では、間違えた問題がありません。</span></div>
+  </div>
+</section>
+
 </div>
 
 <div class="network-page" data-page="s1">
@@ -2088,6 +2260,34 @@
   </div>
 </section>
 
+<section id="s1-original-quiz" class="original-quiz-section">
+  <div class="section-title"><div class="num">OQ</div><div><h2>セキュリティ1 オリジナル問題</h2><small>教材の重要ポイントを言い換え・応用した新作10問</small></div></div>
+  <div class="quiz-panel">
+    <div class="test-tip"><b>本番対策：</b>既存の小テストと同じ答えを暗記するだけでなく、別の聞かれ方でも判断できるか確認しよう。</div>
+    <div class="quiz-toolbar" style="margin-top:14px">
+      <div class="quiz-stats">
+        <span class="stat-pill" id="origS1Progress">1 / 10</span>
+        <span class="stat-pill good" id="origS1Correct">正解 0</span>
+        <span class="stat-pill bad" id="origS1Wrong">不正解 0</span>
+      </div>
+      <div class="actions" style="margin-top:0">
+        <button class="btn secondary" id="origS1Shuffle" type="button">オリジナル問題をシャッフル</button>
+        <button class="btn secondary" id="origS1RetryWrong" type="button">間違えた問題だけ解き直す</button>
+        <button class="btn secondary" id="origS1ShowAll" type="button">全10問に戻す</button>
+        <button class="btn secondary" id="origS1Reset" type="button">回答履歴をリセット</button>
+      </div>
+    </div>
+    <div id="origS1Card" class="quiz-card">
+      <div class="quiz-meta"><span id="origS1Number"></span><span>オリジナル</span><span>1つ選択</span></div>
+      <div class="quiz-question" id="origS1Question"></div>
+      <div class="choices" id="origS1Choices"></div>
+      <div class="feedback hidden" id="origS1Feedback"></div>
+      <div class="quiz-nav"><button class="btn secondary" id="origS1Prev" type="button">← 前の問題</button><button class="btn" id="origS1Next" type="button">次の問題 →</button></div>
+    </div>
+    <div id="origS1Empty" class="quiz-empty hidden"><strong>解き直す問題はありません 🎉</strong><span>オリジナル問題の回答履歴では、間違えた問題がありません。</span></div>
+  </div>
+</section>
+
 </div>
 
 
@@ -2254,6 +2454,34 @@
     <div id="quizS2Empty" class="quiz-empty hidden"><strong>解き直す問題はありません 🎉</strong><span>いまの回答履歴では、間違えた問題がありません。</span></div>
   </div>
 </section>
+
+<section id="s2-original-quiz" class="original-quiz-section">
+  <div class="section-title"><div class="num">OQ</div><div><h2>セキュリティ2 オリジナル問題</h2><small>教材の重要ポイントを言い換え・応用した新作10問</small></div></div>
+  <div class="quiz-panel">
+    <div class="test-tip"><b>本番対策：</b>既存の小テストと同じ答えを暗記するだけでなく、別の聞かれ方でも判断できるか確認しよう。</div>
+    <div class="quiz-toolbar" style="margin-top:14px">
+      <div class="quiz-stats">
+        <span class="stat-pill" id="origS2Progress">1 / 10</span>
+        <span class="stat-pill good" id="origS2Correct">正解 0</span>
+        <span class="stat-pill bad" id="origS2Wrong">不正解 0</span>
+      </div>
+      <div class="actions" style="margin-top:0">
+        <button class="btn secondary" id="origS2Shuffle" type="button">オリジナル問題をシャッフル</button>
+        <button class="btn secondary" id="origS2RetryWrong" type="button">間違えた問題だけ解き直す</button>
+        <button class="btn secondary" id="origS2ShowAll" type="button">全10問に戻す</button>
+        <button class="btn secondary" id="origS2Reset" type="button">回答履歴をリセット</button>
+      </div>
+    </div>
+    <div id="origS2Card" class="quiz-card">
+      <div class="quiz-meta"><span id="origS2Number"></span><span>オリジナル</span><span>1つ選択</span></div>
+      <div class="quiz-question" id="origS2Question"></div>
+      <div class="choices" id="origS2Choices"></div>
+      <div class="feedback hidden" id="origS2Feedback"></div>
+      <div class="quiz-nav"><button class="btn secondary" id="origS2Prev" type="button">← 前の問題</button><button class="btn" id="origS2Next" type="button">次の問題 →</button></div>
+    </div>
+    <div id="origS2Empty" class="quiz-empty hidden"><strong>解き直す問題はありません 🎉</strong><span>オリジナル問題の回答履歴では、間違えた問題がありません。</span></div>
+  </div>
+</section>
 </div>
 
 
@@ -2418,6 +2646,34 @@
       <div class="quiz-nav"><button class="btn secondary" id="prevQuizS3">← 前の問題</button><button class="btn" id="nextQuizS3">次の問題 →</button></div>
     </div>
     <div id="quizS3Empty" class="quiz-empty hidden"><strong>解き直す問題はありません 🎉</strong><span>いまの回答履歴では、間違えた問題がありません。</span></div>
+  </div>
+</section>
+
+<section id="s3-original-quiz" class="original-quiz-section">
+  <div class="section-title"><div class="num">OQ</div><div><h2>セキュリティ3 オリジナル問題</h2><small>教材の重要ポイントを言い換え・応用した新作10問</small></div></div>
+  <div class="quiz-panel">
+    <div class="test-tip"><b>本番対策：</b>既存の小テストと同じ答えを暗記するだけでなく、別の聞かれ方でも判断できるか確認しよう。</div>
+    <div class="quiz-toolbar" style="margin-top:14px">
+      <div class="quiz-stats">
+        <span class="stat-pill" id="origS3Progress">1 / 10</span>
+        <span class="stat-pill good" id="origS3Correct">正解 0</span>
+        <span class="stat-pill bad" id="origS3Wrong">不正解 0</span>
+      </div>
+      <div class="actions" style="margin-top:0">
+        <button class="btn secondary" id="origS3Shuffle" type="button">オリジナル問題をシャッフル</button>
+        <button class="btn secondary" id="origS3RetryWrong" type="button">間違えた問題だけ解き直す</button>
+        <button class="btn secondary" id="origS3ShowAll" type="button">全10問に戻す</button>
+        <button class="btn secondary" id="origS3Reset" type="button">回答履歴をリセット</button>
+      </div>
+    </div>
+    <div id="origS3Card" class="quiz-card">
+      <div class="quiz-meta"><span id="origS3Number"></span><span>オリジナル</span><span>1つ選択</span></div>
+      <div class="quiz-question" id="origS3Question"></div>
+      <div class="choices" id="origS3Choices"></div>
+      <div class="feedback hidden" id="origS3Feedback"></div>
+      <div class="quiz-nav"><button class="btn secondary" id="origS3Prev" type="button">← 前の問題</button><button class="btn" id="origS3Next" type="button">次の問題 →</button></div>
+    </div>
+    <div id="origS3Empty" class="quiz-empty hidden"><strong>解き直す問題はありません 🎉</strong><span>オリジナル問題の回答履歴では、間違えた問題がありません。</span></div>
   </div>
 </section>
 </div>
@@ -3252,8 +3508,69 @@
   renderQuizS3();
 
 
-  // ===== 全問題まとめ演習 =====
-  // Security 1 の CIA 対応問題は、総合モードでは1つの選択問題として収録。
+  const network1OriginalQuestions = [{"id":"n1o01","q":"パソコンで文書を編集中に突然電源が切れ、保存前の内容が消えました。主に関係する記憶装置はどれか？","choices":["RAM","ROM","SSD","DVD-RW"],"answer":0,"explain":"作業中のデータは主にRAMに一時保存されます。RAMは揮発性なので、電源が切れると内容が失われます。"},{"id":"n1o02","q":"CPUが一度に扱えるデータ量に関係する指標はどれか？","choices":["バス幅","画面解像度","HDDの回転数","ファイル名の長さ"],"answer":0,"explain":"バス幅は一度に転送できるデータ量に関係します。クロック周波数は主に処理速度の指標です。"},{"id":"n1o03","q":"4ビットで表現できる情報の種類はいくつか？","choices":["4通り","8通り","16通り","32通り"],"answer":2,"explain":"nビットでは2のn乗通りを表せます。4ビットなら2⁴＝16通りです。"},{"id":"n1o04","q":"アプリケーションを終了したとき、使っていた主記憶領域を再び利用できるようにするOSの働きはどれか？","choices":["メモリ管理","ジョブ管理","画面管理","電源管理"],"answer":0,"explain":"OSのメモリ管理は、プログラムへメモリを割り当てたり、終了後に解放したりします。"},{"id":"n1o05","q":"文字でコマンドを入力してコンピューターを操作するインターフェースはどれか？","choices":["GUI","CUI","SaaS","LAN"],"answer":1,"explain":"CUIは文字やコマンドを入力して操作する方式です。GUIはアイコンやボタンなどを使います。"},{"id":"n1o06","q":"東京本社のLANと大阪支社のLANを通信回線で接続したネットワークは、一般にどれに該当するか？","choices":["WAN","RAM","GUI","SaaS"],"answer":0,"explain":"離れたLAN同士を接続する広域ネットワークはWANです。"},{"id":"n1o07","q":"複数の取引先へ同じメールを送り、受信者同士にはメールアドレスを見せたくありません。最も適切な宛先欄はどれか？","choices":["To","CC","BCC","Subject"],"answer":2,"explain":"BCCでは、BCCに指定した宛先が他の受信者から見えません。"},{"id":"n1o08","q":"開発者がサーバー本体を管理せず、用意されたアプリ開発・実行環境を利用するクラウドサービスはどれか？","choices":["SaaS","PaaS","IaaS","LAN"],"answer":1,"explain":"PaaSはアプリケーションの開発・実行に必要なプラットフォームを提供します。"},{"id":"n1o09","q":"ATMで残高照会を行い、その場ですぐ最新の結果を返す処理方式として適切なのはどれか？","choices":["バッチ処理","オンラインリアルタイム処理","集中記憶","光ディスク処理"],"answer":1,"explain":"発生した処理をその場ですぐ実行するのがオンラインリアルタイム処理です。"},{"id":"n1o10","q":"ノートPCを持ち運ぶ用途で、HDDよりSSDが向いている理由として最も適切なのはどれか？","choices":["可動部がなく衝撃に比較的強いから","電源を切ると必ず消えるから","読み取り専用だから","必ず容量が大きいから"],"answer":0,"explain":"SSDは可動部がないため、HDDに比べ静音で衝撃にも比較的強い特徴があります。"}];
+  const network2OriginalQuestions = [{"id":"n2o01","q":"LAN内でMACアドレスを使ってフレームを転送する機器はどれか？","choices":["L2スイッチ","ルーター","リピーター","Webサーバー"],"answer":0,"explain":"L2スイッチはデータリンク層で動作し、MACアドレスを使って転送先を判断します。"},{"id":"n2o02","q":"OSI参照モデルで、異なるネットワーク間の経路選択に最も関係する層はどれか？","choices":["物理層","データリンク層","ネットワーク層","アプリケーション層"],"answer":2,"explain":"ネットワーク層（L3）はIPアドレスを扱い、ルーティングに関係します。"},{"id":"n2o03","q":"送信データが上位層から下位層へ進むときのデータ単位の流れとして適切なのはどれか？","choices":["セグメント→パケット→フレーム","フレーム→パケット→セグメント","パケット→フレーム→セグメント","フレーム→セグメント→パケット"],"answer":0,"explain":"教材のカプセル化では、L4のセグメント→L3のパケット→L2のフレームという流れで覚えます。"},{"id":"n2o04","q":"IPアドレスは分かっているが、LAN内で実際に届けるためのMACアドレスが分かりません。この対応を調べるプロトコルはどれか？","choices":["HTTP","ARP","SMTP","FTP"],"answer":1,"explain":"ARPはIPアドレスから対応するMACアドレスを調べるために使われます。"},{"id":"n2o05","q":"通信障害の原因を『ケーブルの問題か、IP設定の問題か、アプリの問題か』のように切り分けるとき役立つ考え方はどれか？","choices":["OSI参照モデル","二進数変換","バッチ処理","SaaS分類"],"answer":0,"explain":"OSI参照モデルは通信機能を階層化しているため、障害をレイヤーごとに切り分けやすくなります。"},{"id":"n2o06","q":"Webページを公開するサーバーソフトウェアとして教材で扱われたものはどれか？","choices":["Apache","Postfix","Outlook","Excel"],"answer":0,"explain":"Apacheは代表的なWebサーバーソフトウェアです。"},{"id":"n2o07","q":"メールサーバー間でメールを送信・転送するソフトウェアとして教材で扱われたものはどれか？","choices":["Apache","Postfix","MySQL","Chrome"],"answer":1,"explain":"PostfixはSMTPを利用する代表的なメール転送ソフトウェアです。"},{"id":"n2o08","q":"Linuxがサーバーで広く利用される理由として不適切なものはどれか？","choices":["オープンソースである","無料で利用できるものが多い","サーバー用途で実績がある","スマートフォン専用OSである"],"answer":3,"explain":"Linuxはスマートフォン専用OSではありません。オープンソースで、サーバー用途でも広く利用されています。"},{"id":"n2o09","q":"OSI参照モデルでポート番号と最も関係する層はどれか？","choices":["L1 物理層","L2 データリンク層","L3 ネットワーク層","L4 トランスポート層"],"answer":3,"explain":"ポート番号はTCP/UDPなどトランスポート層で、通信を適切なアプリケーションへ届けるために使われます。"},{"id":"n2o10","q":"異なるOSのコンピューター同士でもTCP/IPで通信できる主な理由はどれか？","choices":["共通の通信ルールに従うから","同じメーカーのCPUが必要だから","MACアドレスが同じだから","必ず同じアプリを使うから"],"answer":0,"explain":"TCP/IPはOSに依存しない共通の通信ルールなので、異なるOS間でも通信できます。"}];
+  const network3OriginalQuestions = [{"id":"n3o01","q":"多少のデータ欠損より遅延の少なさを優先する音声通話で、選ばれやすい通信方式はどれか？","choices":["TCP","UDP","FTP","SMTP"],"answer":1,"explain":"UDPは確認や再送の手続きを省き、リアルタイム性を重視する通信に向きます。"},{"id":"n3o02","q":"通信開始前に接続を確立し、信頼性を重視する方式はどれか？","choices":["コネクション型","コネクションレス型","ブロードキャスト型","マルチキャスト型"],"answer":0,"explain":"コネクション型は通信前に接続を確立します。TCPが代表例です。"},{"id":"n3o03","q":"同じLAN内の特定グループだけにオンライン授業の映像を配信したい場合、最も適した通信方式はどれか？","choices":["ユニキャスト","ブロードキャスト","マルチキャスト","エニーキャスト"],"answer":2,"explain":"マルチキャストは特定のグループに対して効率的に同じデータを配信します。"},{"id":"n3o04","q":"L2スイッチが受信したフレームから送信元MACアドレスと接続ポートの対応を覚える機能は何か？","choices":["ラーニング機能","NAT機能","暗号化機能","DNS機能"],"answer":0,"explain":"L2スイッチのラーニング機能は、MACアドレスとポートの対応を学習・記憶します。"},{"id":"n3o05","q":"外部からの不正な通信をネットワークの境界で遮断する役割を持つ機器はどれか？","choices":["NIC","リピーター","ファイアウォール","キーボード"],"answer":2,"explain":"ファイアウォールはネットワーク境界で通信を制御し、不正アクセスを防ぎます。"},{"id":"n3o06","q":"サブネットマスクが255.255.255.0のとき、192.168.10.25と同じネットワーク部を持つアドレスはどれか？","choices":["192.168.10.200","192.168.11.25","192.169.10.25","10.168.10.25"],"answer":0,"explain":"/24では最初の3オクテットがネットワーク部なので、192.168.10.x同士は同じネットワーク部です。"},{"id":"n3o07","q":"次のうちプライベートIPアドレスとして利用できるものはどれか？","choices":["172.18.5.10","172.40.5.10","8.8.8.8","203.0.113.10"],"answer":0,"explain":"172.16.0.0〜172.31.255.255はプライベートIPアドレスの範囲です。"},{"id":"n3o08","q":"192.168.5.0/24のネットワークで、ホストに割り当てられないアドレスの組み合わせはどれか？","choices":["192.168.5.0 と 192.168.5.255","192.168.5.1 と 192.168.5.254","192.168.5.10 と 192.168.5.20","192.168.5.100 と 192.168.5.200"],"answer":0,"explain":"/24では末尾0がネットワークアドレス、255がブロードキャストアドレスなので通常ホストには割り当てません。"},{"id":"n3o09","q":"インターネット技術の標準仕様を公開するRFCについて正しいものはどれか？","choices":["IETFが関わり、一般に閲覧できる","企業秘密として非公開である","JISだけが発行する","IPアドレスの暗号鍵である"],"answer":0,"explain":"RFCはIETFによって発行されるインターネット技術の文書で、誰でも閲覧できます。"},{"id":"n3o10","q":"物理層で信号が弱くなったとき、信号を整形・増幅して再送する装置はどれか？","choices":["リピーター","ルーター","L3スイッチ","DNSサーバー"],"answer":0,"explain":"リピーターは物理層で動作し、信号を整形・増幅して再送します。"}];
+  const network4OriginalQuestions = [{"id":"n4o01","q":"IPv4のアドレス総数が約43億通りになる理由として正しいものはどれか？","choices":["32ビットなので2³²通りあるから","32文字で表記するから","32台ごとに区切るから","32個のポートを使うから"],"answer":0,"explain":"IPv4は32ビットで構成されるため、理論上2³²通りの組み合わせがあります。"},{"id":"n4o02","q":"家庭内の複数端末を1つのグローバルIPアドレスで同時にインターネットへ接続するとき、端末を区別するために主に使うものはどれか？","choices":["ポート番号","MACアドレスだけ","ドメイン名","FCSだけ"],"answer":0,"explain":"NAPT（IPマスカレード）は、1つのグローバルIPを複数端末で共有し、ポート番号で通信を区別します。"},{"id":"n4o03","q":"IPv6がアドレス枯渇対策として有効な主な理由はどれか？","choices":["128ビットで非常に多くのアドレスを表せるから","必ず通信速度が2倍になるから","MACアドレスが不要になるから","DNSを使わないから"],"answer":0,"explain":"IPv6は128ビットで、IPv4より圧倒的に多くのアドレスを扱えます。"},{"id":"n4o04","q":"pingで応答時間が『20ms』と表示された場合、20msが表すものはどれか？","choices":["応答にかかった時間","送信したパケット数","相手までの距離","IPアドレスの長さ"],"answer":0,"explain":"msはミリ秒で、pingでは通信の応答時間（遅延）の目安として表示されます。"},{"id":"n4o05","q":"pingが通信相手の応答確認に利用するプロトコルはどれか？","choices":["ICMP","SMTP","FTP","POP3"],"answer":0,"explain":"pingはICMPを利用して通信相手が応答するか確認します。"},{"id":"n4o06","q":"インターネット上に安全な仮想専用線を作るVPNで、認証と暗号化を提供する技術として教材で扱われたものはどれか？","choices":["IPsec","ARP","DNS","FCS"],"answer":0,"explain":"IPsecはIP通信で相手認証や暗号化を行い、VPNなどで利用されます。"},{"id":"n4o07","q":"TCPの3ウェイハンドシェイクの基本的な順番として正しいものはどれか？","choices":["SYN→SYN/ACK→ACK","ACK→SYN→FIN","FIN→ACK→SYN","SYN→FIN→RST"],"answer":0,"explain":"TCPでは接続確立時にSYN→SYN/ACK→ACKの3段階で確認します。"},{"id":"n4o08","q":"TCPで一部のデータが届かなかった場合、正確な通信を実現するために行われる制御はどれか？","choices":["再送制御","DNS逆引き","MACアドレス変更","暗号鍵生成"],"answer":0,"explain":"TCPはACKなどを使って到達を確認し、必要に応じてデータを再送します。"},{"id":"n4o09","q":"WebブラウザがHTTPSでサーバーへ接続するときの標準ポート番号はどれか？","choices":["21","25","80","443"],"answer":3,"explain":"HTTPSの標準ポートは443番です。HTTPは80番です。"},{"id":"n4o10","q":"Ethernetフレームが通信途中で壊れていないかを検出するため、フレーム末尾に付加されるものはどれか？","choices":["FCS","DNS","ACK","URL"],"answer":0,"explain":"FCSはデータリンク層で使われる誤り検出情報で、フレーム末尾に付加されます。"}];
+  const network5OriginalQuestions = [{"id":"n5o01","q":"ブラウザにexample.comと入力したとき、通信先を特定するため最終的に必要となる情報はどれか？","choices":["IPアドレス","MACアドレスだけ","メールアドレス","ファイル名"],"answer":0,"explain":"インターネット上の通信ではIPアドレスが必要で、DNSがドメイン名からIPアドレスを調べます。"},{"id":"n5o02","q":"『203.0.113.10』というIPアドレスから対応するドメイン名を調べる操作は何か？","choices":["正引き","逆引き","暗号化","カプセル化"],"answer":1,"explain":"IPアドレスからドメイン名を調べるのがDNSの逆引きです。"},{"id":"n5o03","q":"PCとスマートフォンの両方で同じメールボックスの既読状態を同期したい場合、適している受信方式はどれか？","choices":["IMAP","POP3のみ","SMTP","FTP"],"answer":0,"explain":"IMAPはメールをサーバー上で管理するため、複数端末で状態を同期しやすい方式です。"},{"id":"n5o04","q":"POP3で『受信後にサーバーからメールを削除する』設定を使った場合に起こりやすいことはどれか？","choices":["別端末で同じメールを確認しにくくなる","Web通信が暗号化される","DNSが不要になる","SMTPが使えなくなる"],"answer":0,"explain":"POP3は端末へダウンロードして利用する方式なので、サーバーから削除すると別端末から同じメールを見られないことがあります。"},{"id":"n5o05","q":"HTTPSでサーバーが本物であることを確認するために使われるものはどれか？","choices":["サーバー証明書","MACアドレス表","FCS","ARPテーブル"],"answer":0,"explain":"SSL/TLS証明書はサーバーの正当性を証明し、暗号化通信の基盤になります。"},{"id":"n5o06","q":"WebサイトのSSL/TLS証明書を発行する信頼された第三者機関は何と呼ばれるか？","choices":["CA（認証局）","ISP","NIC","IETF"],"answer":0,"explain":"CA（Certificate Authority／認証局）は証明書を発行し、サーバーの身元確認を支えます。"},{"id":"n5o07","q":"HTTPSで公開鍵暗号と共通鍵暗号を組み合わせる主な狙いはどれか？","choices":["安全に鍵を共有しつつ、その後の通信を高速化する","IPアドレスを隠す","DNSを高速化する","メールを自動削除する"],"answer":0,"explain":"公開鍵暗号で共通鍵を安全に共有し、その後は高速な共通鍵暗号で通信するのがハイブリッド暗号の考え方です。"},{"id":"n5o08","q":"暗号化されていないHTTP通信を第三者にパケットキャプチャされた場合のリスクとして適切なのはどれか？","choices":["通信内容を読み取られる可能性がある","IPv6へ自動変換される","必ず通信速度が上がる","MACアドレスが消える"],"answer":0,"explain":"HTTPは通信内容を暗号化しないため、盗聴されると送受信データの一部が見える可能性があります。"},{"id":"n5o09","q":"メールの『送信』と『受信』の組み合わせとして正しいものはどれか？","choices":["送信＝SMTP、受信＝POP3またはIMAP","送信＝DNS、受信＝HTTP","送信＝IMAP、受信＝SMTP","送信＝ARP、受信＝FTP"],"answer":0,"explain":"SMTPはメール送信・転送に使い、POP3やIMAPはメール受信に使います。"},{"id":"n5o10","q":"TCPヘッダー内の宛先ポート番号を見ることで主に判断できることはどれか？","choices":["どのアプリケーションサービスへ届けるか","LANケーブルの種類","MACアドレスのメーカー","画面解像度"],"answer":0,"explain":"ポート番号は、受信した通信をどのアプリケーションやサービスへ渡すか識別するために使われます。"}];
+  const security1OriginalQuestions = [{"id":"s1o01","q":"顧客名簿を閲覧できる人を担当者だけに制限する対策は、CIAのどれを高めるか？","choices":["機密性","完全性","可用性","互換性"],"answer":0,"explain":"権限のない人が情報へアクセスできないようにするのは機密性の確保です。"},{"id":"s1o02","q":"重要な契約書データが勝手に書き換えられていないことを保証する考え方はCIAのどれか？","choices":["機密性","完全性","可用性","冗長性"],"answer":1,"explain":"情報が正確で改ざんされていない状態を守るのが完全性です。"},{"id":"s1o03","q":"災害時にも必要な業務システムを利用できるよう予備サーバーを用意する対策はCIAのどれと最も関係するか？","choices":["機密性","完全性","可用性","匿名性"],"answer":2,"explain":"必要な時にシステムや情報を使える状態を維持することが可用性です。"},{"id":"s1o04","q":"社員が誤って機密ファイルを外部へ送信してしまう出来事は、主にどの種類の脅威か？","choices":["人的脅威","物理的脅威","自然現象だけの脅威","暗号化脅威"],"answer":0,"explain":"メール誤送信や誤操作は人的脅威の代表例です。"},{"id":"s1o05","q":"地震でサーバールームが利用できなくなる危険は、主にどの種類の脅威として考えられるか？","choices":["人的脅威","物理的脅威","認証脅威","アプリケーション脅威のみ"],"answer":1,"explain":"災害や設備故障など、物理環境に関係する危険は物理的脅威に含まれます。"},{"id":"s1o06","q":"1つのパスワード対策だけでなく、MFA・アクセス制御・監視など複数の防御を組み合わせる考え方は何か？","choices":["多層防御","単一障害点","バッチ処理","逆引き"],"answer":0,"explain":"複数の対策を重ね、1つが破られても被害を抑える考え方が多層防御です。"},{"id":"s1o07","q":"攻撃者が『aaaa』『aaab』のように可能な文字列を片っ端から試す攻撃はどれか？","choices":["ブルートフォース攻撃","フィッシング","XSS","盗聴"],"answer":0,"explain":"すべての組み合わせを総当たりで試すのがブルートフォース攻撃です。"},{"id":"s1o08","q":"あるサービスから漏えいしたIDとパスワードを使って、別のサービスへのログインを試す攻撃はどれか？","choices":["クレデンシャルスタッフィング","ショルダーハッキング","バッファオーバーフロー","DoS攻撃"],"answer":0,"explain":"漏えい済みの認証情報を他サービスでも試すのがクレデンシャルスタッフィングです。"},{"id":"s1o09","q":"パスワードに加えてスマートフォンの確認コードを要求する認証は、どの対策の例か？","choices":["MFA（多要素認証）","DNS","NAT","FCS"],"answer":0,"explain":"知識要素のパスワードと、所持要素のスマートフォンなど異なる認証要素を組み合わせるのがMFAです。"},{"id":"s1o10","q":"銀行を装ったメールから偽サイトへ誘導し、IDとパスワードを入力させる攻撃はどれか？","choices":["フィッシング","リピーター攻撃","バッチ攻撃","NAT攻撃"],"answer":0,"explain":"本物を装ったメールやWebサイトで認証情報などを盗むのがフィッシングです。"}];
+  const security2OriginalQuestions = [{"id":"s2o01","q":"『攻撃者が存在する』『古いソフトに弱点がある』『情報漏えいが起きる可能性がある』を順に表した組み合わせはどれか？","choices":["脅威→脆弱性→リスク","脆弱性→リスク→脅威","リスク→脅威→脆弱性","対策→脅威→資産"],"answer":0,"explain":"脅威は危険要因、脆弱性は弱点、リスクはそれらによって被害が起こる可能性です。"},{"id":"s2o02","q":"サーバールームの鍵が壊れており、誰でも入室できる状態はどの種類の脆弱性か？","choices":["人的脆弱性","物理的脆弱性","技術的脆弱性","経済的脆弱性"],"answer":1,"explain":"入退室や施錠など物理環境の弱点は物理的脆弱性に該当します。"},{"id":"s2o03","q":"一般ユーザー権限で侵入した攻撃者が、OSの弱点を使って管理者権限を得ました。この行為は何か？","choices":["特権昇格","DNS逆引き","暗号化","名前解決"],"answer":0,"explain":"侵入後により高い権限を取得することを特権昇格と呼びます。"},{"id":"s2o04","q":"外部から送った不正な命令を脆弱なサーバー上で実行できてしまう問題は、何と呼ばれるか？","choices":["RCE（Remote Code Execution）","IMAP","MFA","FCS"],"answer":0,"explain":"RCEは外部から任意のコードを実行される危険な脆弱性です。"},{"id":"s2o05","q":"重要サーバーへ更新プログラムを適用する前に、互換性確認や検証環境でのテストを行う主な理由はどれか？","choices":["業務アプリへの影響を確認するため","パスワードを短くするため","DNSを停止するため","MACアドレスを増やすため"],"answer":0,"explain":"更新は重要ですが、業務アプリとの互換性問題でサービス停止につながる可能性があるため事前検証が必要です。"},{"id":"s2o06","q":"メーカーの公式サポートが終了した製品を使い続ける主なセキュリティ上の問題はどれか？","choices":["新しい脆弱性への修正が提供されにくくなる","必ず通信速度が上がる","IPアドレスが増える","ファイル容量が自動で減る"],"answer":0,"explain":"EOS/EOL後は脆弱性修正やサポートが受けられなくなる可能性があり、リスクが高まります。"},{"id":"s2o07","q":"脆弱性の危険度を0〜10などの数値で比較するときに使う代表的な指標はどれか？","choices":["CVSS","DNS","SMTP","GUI"],"answer":0,"explain":"CVSSは攻撃のしやすさや必要権限、CIAへの影響などから脆弱性の深刻度を数値化します。"},{"id":"s2o08","q":"掲示板に投稿した文字列がHTMLとして解釈され、閲覧者のブラウザで悪意あるJavaScriptが実行されました。これは何の攻撃か？","choices":["XSS","NAT","ARP","ブルートフォース"],"answer":0,"explain":"脆弱なWebページに悪意あるスクリプトを混入させ、閲覧者のブラウザで実行させるのがXSSです。"},{"id":"s2o09","q":"XSS対策として、ユーザー入力に含まれる『<』や『>』などを命令ではなく文字として表示する処理は何か？","choices":["出力エスケープ","特権昇格","ポートフォワード","逆引き"],"answer":0,"explain":"出力エスケープにより、入力値をHTMLやJavaScriptの命令として解釈されにくくします。"},{"id":"s2o10","q":"プログラムが用意したメモリ領域を超えて大量のデータを書き込み、異常動作を起こす問題はどれか？","choices":["バッファオーバーフロー","フィッシング","DNSキャッシュ","MFA"],"answer":0,"explain":"想定したバッファ容量を超えてデータを書き込むことで、隣接領域を破壊する問題がバッファオーバーフローです。"}];
+  const security3OriginalQuestions = [{"id":"s3o01","q":"経営会議で『来年度は顧客情報保護を最優先し、セキュリティ予算を増やす』と決める行為はどちらに近いか？","choices":["ガバナンス","マネジメント","ログ点検","パッチ適用"],"answer":0,"explain":"方向性・優先順位・リソースを決めるのはガバナンスの役割です。"},{"id":"s3o02","q":"決められたセキュリティ方針に従い、担当者が毎週ログを確認する活動はどちらに近いか？","choices":["ガバナンス","マネジメント","経営判断だけ","SoAの廃止"],"answer":1,"explain":"ガバナンスで決めた方針を日々実行・点検するのがマネジメントです。"},{"id":"s3o03","q":"ISMSの説明として最も適切なものはどれか？","choices":["組織が情報セキュリティを継続的に管理する仕組み","暗号方式の名称","ネットワーク機器の規格","Webサーバーソフト"],"answer":0,"explain":"ISMSはInformation Security Management Systemで、組織的に情報セキュリティを管理・改善する仕組みです。"},{"id":"s3o04","q":"PDCAで、実施した対策が計画どおり機能しているか評価する段階はどれか？","choices":["Plan","Do","Check","Act"],"answer":2,"explain":"Checkは実施結果を点検・評価する段階です。"},{"id":"s3o05","q":"PDCAで、点検結果を受けて問題を修正し次の改善につなげる段階はどれか？","choices":["Plan","Do","Check","Act"],"answer":3,"explain":"Actは評価結果をもとに改善する段階です。"},{"id":"s3o06","q":"組織がISMSの認証取得を目指すとき、『満たすべき要求事項』を確認する主な規格はどれか？","choices":["ISO/IEC 27001","ISO/IEC 27002だけ","HTTP","RFCだけ"],"answer":0,"explain":"ISO/IEC 27001はISMSの要求事項を定めた規格です。"},{"id":"s3o07","q":"アクセス制御や人材教育など、情報セキュリティ管理策の具体的な実施指針を調べたい場合に参考となる規格はどれか？","choices":["ISO/IEC 27002","ISO/IEC 27001だけ","SMTP","IPv6"],"answer":0,"explain":"ISO/IEC 27002は情報セキュリティ管理策の具体例や実施指針を提供します。"},{"id":"s3o08","q":"SoA（適用宣言）に『この管理策は採用しない』と記載する場合、同時に明確にすべきものはどれか？","choices":["不採用の理由","社員全員のパスワード","IPアドレス一覧","WebサイトのURL"],"answer":0,"explain":"SoAでは各管理策の採用・不採用と、その判断理由を明確にします。"},{"id":"s3o09","q":"危険な外部サービスの利用そのものを中止するリスク対応はどれか？","choices":["回避","低減","移転","受容"],"answer":0,"explain":"リスク源そのものをなくす・関係を断つ方法が回避です。"},{"id":"s3o10","q":"発生確率は低いが、事故時の損害額が非常に大きいためサイバー保険に加入する対応はどれか？","choices":["回避","低減","移転","受容"],"answer":2,"explain":"保険や契約などで経済的損失を第三者へ移すのがリスク移転です。"}];
+
+  // ===== 各セクション：オリジナル問題演習 =====
+  function setupOriginalQuiz(questions, base, storageKey){
+    let state=JSON.parse(localStorage.getItem(storageKey)||'{}');
+    if(!state.answers) state.answers={};
+    let mode='all';
+    let order=questions.map(q=>q.id);
+    let index=0;
+    const $=suffix=>document.getElementById(base+suffix);
+    const getQ=id=>questions.find(q=>q.id===id);
+    const save=()=>localStorage.setItem(storageKey,JSON.stringify(state));
+    const counts=()=>{const vals=Object.values(state.answers);return {correct:vals.filter(a=>a.correct).length,wrong:vals.filter(a=>!a.correct).length};};
+    function render(){
+      const list=order, c=counts(), card=$('Card'), empty=$('Empty');
+      $('Correct').textContent=`正解 ${c.correct}`;$('Wrong').textContent=`不正解 ${c.wrong}`;
+      if(!list.length){card.classList.add('hidden');empty.classList.remove('hidden');$('Progress').textContent='0 / 0';return;}
+      card.classList.remove('hidden');empty.classList.add('hidden');
+      if(index>=list.length)index=list.length-1;if(index<0)index=0;
+      const q=getQ(list[index]), answered=state.answers[q.id];
+      $('Progress').textContent=`${index+1} / ${list.length}`;
+      $('Number').textContent=mode==='wrong'?`間違い直し・問題 ${index+1}`:`オリジナル問題 ${index+1}`;
+      $('Question').textContent=q.q;
+      const box=$('Choices');box.innerHTML='';
+      q.choices.forEach((text,i)=>{
+        const btn=document.createElement('button');btn.type='button';btn.className='choice';
+        btn.innerHTML=`<span class="choice-index">${String.fromCharCode(65+i)}</span>${text}`;
+        if(answered){btn.disabled=true;if(i===q.answer)btn.classList.add('correct');if(i===answered.selected&&!answered.correct)btn.classList.add('wrong');}
+        else btn.addEventListener('click',()=>{state.answers[q.id]={selected:i,correct:i===q.answer};save();render();});
+        box.appendChild(btn);
+      });
+      const fb=$('Feedback');
+      if(answered){fb.className=`feedback ${answered.correct?'good':'bad'}`;fb.innerHTML=`<strong>${answered.correct?'✓ 正解！':'× 不正解'}　正解：${q.choices[q.answer]}</strong>${q.explain}`;}
+      else{fb.className='feedback hidden';fb.innerHTML='';}
+      $('Prev').disabled=index===0;$('Next').disabled=index===list.length-1;
+    }
+    $('Prev').addEventListener('click',()=>{if(index>0){index--;render();}});
+    $('Next').addEventListener('click',()=>{if(index<order.length-1){index++;render();}});
+    $('Shuffle').addEventListener('click',()=>{mode='all';order=questions.map(q=>q.id);for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]];}index=0;render();});
+    $('RetryWrong').addEventListener('click',()=>{const wrong=questions.filter(q=>state.answers[q.id]&&!state.answers[q.id].correct).map(q=>q.id);wrong.forEach(id=>delete state.answers[id]);save();mode='wrong';order=wrong;index=0;render();});
+    $('ShowAll').addEventListener('click',()=>{mode='all';order=questions.map(q=>q.id);index=0;render();});
+    $('Reset').addEventListener('click',()=>{if(confirm('このオリジナル問題の回答履歴を削除しますか？')){state={answers:{}};save();mode='all';order=questions.map(q=>q.id);index=0;render();}});
+    render();
+  }
+  setupOriginalQuiz(network1OriginalQuestions,'origN1','network1-original-quiz-v1');
+  setupOriginalQuiz(network2OriginalQuestions,'origN2','network2-original-quiz-v1');
+  setupOriginalQuiz(network3OriginalQuestions,'origN3','network3-original-quiz-v1');
+  setupOriginalQuiz(network4OriginalQuestions,'origN4','network4-original-quiz-v1');
+  setupOriginalQuiz(network5OriginalQuestions,'origN5','network5-original-quiz-v1');
+  setupOriginalQuiz(security1OriginalQuestions,'origS1','security1-original-quiz-v1');
+  setupOriginalQuiz(security2OriginalQuestions,'origS2','security2-original-quiz-v1');
+  setupOriginalQuiz(security3OriginalQuestions,'origS3','security3-original-quiz-v1');
+
+
+  // ===== 全問題まとめ演習：既存問題 / オリジナル問題を分離 =====
+  // Security 1 の CIA 対応問題は、全範囲の既存問題側では1つの選択問題として収録。
   const ciaAllQuestion = {
     id:'cia-match',
     q:'CIAの説明で正しい組み合わせはどれか？',
@@ -3267,7 +3584,8 @@
     explain:'CIAは、C＝Confidentiality（機密性）、I＝Integrity（完全性）、A＝Availability（可用性）です。'
   };
   const addSource = (questions, source, prefix) => questions.map(q => ({...q, allId:`${prefix}:${q.id}`, source}));
-  const allQuestions = [
+
+  const existingAllQuestions = [
     ...addSource(network1Questions, 'Network 1', 'n1'),
     ...addSource(network2Questions, 'Network 2', 'n2'),
     ...addSource(network3Questions, 'Network 3', 'n3'),
@@ -3278,65 +3596,97 @@
     ...addSource(security2Questions, 'Security 2', 's2'),
     ...addSource(security3Questions, 'Security 3', 's3')
   ];
-  document.getElementById('allQuestionCount').textContent = allQuestions.length;
 
-  const quizAllKey='network-security-all-quiz-state-v1';
-  let quizAllState=JSON.parse(localStorage.getItem(quizAllKey)||'{}');
-  if(!quizAllState.answers) quizAllState.answers={};
-  let quizAllMode='all';
-  let quizAllOrder=allQuestions.map(q=>q.allId);
-  let quizAllIndex=0;
-  const getQuestionAll=id=>allQuestions.find(q=>q.allId===id);
-  const saveQuizAll=()=>localStorage.setItem(quizAllKey,JSON.stringify(quizAllState));
-  const currentListAll=()=>quizAllOrder;
-  function quizAllCounts(){
-    const vals=Object.values(quizAllState.answers);
-    return {correct:vals.filter(a=>a.correct).length,wrong:vals.filter(a=>!a.correct).length};
-  }
-  function renderQuizAll(){
-    const list=currentListAll();
-    const card=document.getElementById('quizAllCard');
-    const empty=document.getElementById('quizAllEmpty');
-    const counts=quizAllCounts();
-    document.getElementById('quizAllCorrect').textContent=`正解 ${counts.correct}`;
-    document.getElementById('quizAllWrong').textContent=`不正解 ${counts.wrong}`;
-    if(!list.length){card.classList.add('hidden');empty.classList.remove('hidden');document.getElementById('quizAllProgress').textContent='0 / 0';return;}
-    card.classList.remove('hidden');empty.classList.add('hidden');
-    if(quizAllIndex>=list.length)quizAllIndex=list.length-1;if(quizAllIndex<0)quizAllIndex=0;
-    const q=getQuestionAll(list[quizAllIndex]);
-    const answered=quizAllState.answers[q.allId];
-    document.getElementById('quizAllProgress').textContent=`${quizAllIndex+1} / ${list.length}`;
-    document.getElementById('quizAllNumber').textContent=quizAllMode==='wrong'?`間違い直し・問題 ${quizAllIndex+1}`:`問題 ${quizAllIndex+1}`;
-    document.getElementById('quizAllSource').textContent=q.source;
-    document.getElementById('quizAllQuestion').textContent=q.q;
-    const choices=document.getElementById('quizAllChoices');choices.innerHTML='';
-    q.choices.forEach((text,i)=>{
-      const btn=document.createElement('button');btn.type='button';btn.className='choice';
-      btn.innerHTML=`<span class="choice-index">${String.fromCharCode(65+i)}</span>${text}`;
-      if(answered){btn.disabled=true;if(i===q.answer)btn.classList.add('correct');if(i===answered.selected&&i!==q.answer)btn.classList.add('wrong');}
-      else btn.addEventListener('click',()=>answerQuizAll(q,i));
-      choices.appendChild(btn);
+  const originalAllQuestions = [
+    ...addSource(network1OriginalQuestions, 'Network 1', 'n1o'),
+    ...addSource(network2OriginalQuestions, 'Network 2', 'n2o'),
+    ...addSource(network3OriginalQuestions, 'Network 3', 'n3o'),
+    ...addSource(network4OriginalQuestions, 'Network 4', 'n4o'),
+    ...addSource(network5OriginalQuestions, 'Network 5', 'n5o'),
+    ...addSource(security1OriginalQuestions, 'Security 1', 's1o'),
+    ...addSource(security2OriginalQuestions, 'Security 2', 's2o'),
+    ...addSource(security3OriginalQuestions, 'Security 3', 's3o')
+  ];
+
+  document.getElementById('existingAllQuestionCount').textContent = existingAllQuestions.length;
+  document.getElementById('originalAllQuestionCount').textContent = originalAllQuestions.length;
+
+  function setupCombinedQuiz(questions, prefix, storageKey, label){
+    let state=JSON.parse(localStorage.getItem(storageKey)||'{}');
+    if(!state.answers) state.answers={};
+    let mode='all';
+    let order=questions.map(q=>q.allId);
+    let index=0;
+    const $=suffix=>document.getElementById(prefix+suffix);
+    const getQuestion=id=>questions.find(q=>q.allId===id);
+    const save=()=>localStorage.setItem(storageKey,JSON.stringify(state));
+    const counts=()=>{
+      const ids=new Set(questions.map(q=>q.allId));
+      const vals=Object.entries(state.answers).filter(([id])=>ids.has(id)).map(([,a])=>a);
+      return {correct:vals.filter(a=>a.correct).length,wrong:vals.filter(a=>!a.correct).length};
+    };
+    function render(){
+      const list=order;
+      const card=$('Card');
+      const empty=$('Empty');
+      const c=counts();
+      $('Correct').textContent=`正解 ${c.correct}`;
+      $('Wrong').textContent=`不正解 ${c.wrong}`;
+      if(!list.length){
+        card.classList.add('hidden');empty.classList.remove('hidden');$('Progress').textContent='0 / 0';return;
+      }
+      card.classList.remove('hidden');empty.classList.add('hidden');
+      if(index>=list.length)index=list.length-1;if(index<0)index=0;
+      const q=getQuestion(list[index]);
+      const answered=state.answers[q.allId];
+      $('Progress').textContent=`${index+1} / ${list.length}`;
+      $('Number').textContent=mode==='wrong'?`間違い直し・問題 ${index+1}`:`問題 ${index+1}`;
+      $('Source').textContent=q.source;
+      $('Question').textContent=q.q;
+      const choices=$('Choices');choices.innerHTML='';
+      q.choices.forEach((text,i)=>{
+        const btn=document.createElement('button');btn.type='button';btn.className='choice';
+        btn.innerHTML=`<span class="choice-index">${String.fromCharCode(65+i)}</span>${text}`;
+        if(answered){
+          btn.disabled=true;
+          if(i===q.answer)btn.classList.add('correct');
+          if(i===answered.selected&&i!==q.answer)btn.classList.add('wrong');
+        } else {
+          btn.addEventListener('click',()=>{state.answers[q.allId]={selected:i,correct:i===q.answer};save();render();});
+        }
+        choices.appendChild(btn);
+      });
+      const fb=$('Feedback');
+      if(answered){
+        const correctText=q.choices[q.answer];
+        fb.className=`feedback ${answered.correct?'good':'bad'}`;
+        fb.innerHTML=`<strong>${answered.correct?'✓ 正解！':'× 不正解'}　正解：${correctText}</strong>${q.explain}`;
+      }else{fb.className='feedback hidden';fb.innerHTML='';}
+      $('Prev').disabled=index===0;
+      $('Next').disabled=index===list.length-1;
+    }
+    $('Prev').addEventListener('click',()=>{if(index>0){index--;render();}});
+    $('Next').addEventListener('click',()=>{if(index<order.length-1){index++;render();}});
+    $('Shuffle').addEventListener('click',()=>{
+      mode='all';order=questions.map(q=>q.allId);
+      for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]];}
+      index=0;render();
     });
-    const fb=document.getElementById('quizAllFeedback');
-    if(answered){const correctText=q.choices[q.answer];fb.className=`feedback ${answered.correct?'good':'bad'}`;fb.innerHTML=`<strong>${answered.correct?'✓ 正解！':'× 不正解'}　正解：${correctText}</strong>${q.explain}`;}else{fb.className='feedback hidden';fb.innerHTML='';}
-    document.getElementById('prevQuizAll').disabled=quizAllIndex===0;
-    document.getElementById('nextQuizAll').disabled=quizAllIndex===list.length-1;
+    $('RetryWrong').addEventListener('click',()=>{
+      const wrong=questions.filter(q=>state.answers[q.allId]&&!state.answers[q.allId].correct).map(q=>q.allId);
+      wrong.forEach(id=>delete state.answers[id]);save();mode='wrong';order=wrong;index=0;render();
+    });
+    $('ShowAll').addEventListener('click',()=>{mode='all';order=questions.map(q=>q.allId);index=0;render();});
+    $('Reset').addEventListener('click',()=>{
+      if(confirm(`${label}の回答履歴をすべて削除しますか？`)){
+        state={answers:{}};save();mode='all';order=questions.map(q=>q.allId);index=0;render();
+      }
+    });
+    render();
   }
-  function answerQuizAll(q,selected){quizAllState.answers[q.allId]={selected,correct:selected===q.answer};saveQuizAll();renderQuizAll();}
-  document.getElementById('prevQuizAll').addEventListener('click',()=>{if(quizAllIndex>0){quizAllIndex--;renderQuizAll();}});
-  document.getElementById('nextQuizAll').addEventListener('click',()=>{if(quizAllIndex<currentListAll().length-1){quizAllIndex++;renderQuizAll();}});
-  document.getElementById('shuffleQuizAll').addEventListener('click',()=>{
-    quizAllMode='all';quizAllOrder=allQuestions.map(q=>q.allId);
-    for(let i=quizAllOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[quizAllOrder[i],quizAllOrder[j]]=[quizAllOrder[j],quizAllOrder[i]];}
-    quizAllIndex=0;renderQuizAll();
-  });
-  document.getElementById('retryWrongAll').addEventListener('click',()=>{
-    const wrongIds=allQuestions.filter(q=>quizAllState.answers[q.allId]&&!quizAllState.answers[q.allId].correct).map(q=>q.allId);
-    wrongIds.forEach(id=>delete quizAllState.answers[id]);saveQuizAll();quizAllMode='wrong';quizAllOrder=wrongIds;quizAllIndex=0;renderQuizAll();
-  });
-  document.getElementById('showAllQuizAll').addEventListener('click',()=>{quizAllMode='all';quizAllOrder=allQuestions.map(q=>q.allId);quizAllIndex=0;renderQuizAll();});
-  document.getElementById('resetQuizAll').addEventListener('click',()=>{if(confirm('全問題モードの回答履歴をすべて削除しますか？')){quizAllState={answers:{}};saveQuizAll();quizAllMode='all';quizAllOrder=allQuestions.map(q=>q.allId);quizAllIndex=0;renderQuizAll();}});
-  renderQuizAll();
+
+  setupCombinedQuiz(existingAllQuestions,'existingAll','network-security-existing-all-state-v1','既存問題');
+  setupCombinedQuiz(originalAllQuestions,'originalAll','network-security-original-all-state-v1','オリジナル問題');
 
   // ===== ダークモード =====
   const themeKey='network-study-theme-v1';
